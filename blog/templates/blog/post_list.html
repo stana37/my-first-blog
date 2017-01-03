@@ -6,17 +6,12 @@
         <div>
             <h1><a href="">The world's only Overwatch Blog</a></h1>
         </div>
-
-        <div>
-            <p>published: 3rd of january</p>
-            <h2><a href="">My first post</a></h2>
-            <p>I like overwatch</p>
-        </div>
-
-        <div>
-            <p>published: 3rd january, 17:21</p>
-            <h2><a href="">My second post</a></h2>
-            <p>stuff</p>
-        </div>
+        {% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
     </body>
 </html>
