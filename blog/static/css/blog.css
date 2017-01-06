@@ -5,8 +5,9 @@ h1, h2, h3, h4 {
 
 
 .page-header {
-    background: url(banner.jpg);
+    background: url(bg2.gif);
     background-size:cover;
+    background-position: 0% 30%;
     margin-top: 0;
     padding: 20px 30px 20px 40px;
     height:150px;
@@ -24,10 +25,6 @@ body{
     float: left;
 }
 
-.content_container{
-  background: url(bg.jpg);
-  background-size: cover;
-}
 
 .content {
     margin-left: 12.5%;
@@ -64,6 +61,13 @@ body{
 
 .post h1 a, .post h1 a:visited {
     color: #f4b042;
+}
+
+.post p {
+      border:1px solid #f4b042;
+      border-radius: 5px;
+      padding: 10px;
+      background:rgba(255, 255, 255, .3);
 }
 
 .comment {
