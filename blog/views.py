@@ -6,8 +6,8 @@ from django.shortcuts import render, get_object_or_404
 from .forms import PostForm, CommentForm
 from django.contrib.auth.decorators import login_required
 from rest_framework import generics
-from blog.serializers import BlogSerializer
-from blog.models import Blog
+from blog.serializers import PostSerializer
+from blog.models import Post
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -87,10 +87,10 @@ def comment_remove(request, pk):
     comment.delete()
     return redirect('post_detail', pk=post_pk)
 
-class BlogList(generics.ListCreateAPIView):
-    queryset = Blog.objects.all()
-    serializer_class = BlogSerializer
+class PostList(generics.ListCreateAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
 
-class BlogDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Blog.objects.all()
-    serializer_class = BlogSerializer
+class PostDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
